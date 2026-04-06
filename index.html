@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q Skills – Unit One</title>
+</head>
+<body>
+<script>
+const Sentences = [
+  {
+    english: "Today we are beginning Unit One.",
+    audio: "Today we are beginning Unit One.mp3",
+    audioQuestion: "What are we beginning today?",
+    answer: "We are beginning Unit One."
+  },
+  {
+    english: "Every unit in Q starts with a question.",
+    audio: "Every unit in Q starts with a question.mp3",
+    audioQuestion: "What does every unit in Q start with?",
+    answer: "Every unit in Q starts with a question."
+  },
+  {
+    english: "Every unit in Q.",
+    audio: "Every unit in Q.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "starts with a question.",
+    audio: "starts with a question.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "We will talk about this question again while we study the unit.",
+    audio: "We will talk about this question again while we study the unit.mp3",
+    audioQuestion: "When will we talk about this question again?",
+    answer: "We will talk about this question again while we study the unit."
+  },
+  {
+    english: "We will talk about this question again",
+    audio: "We will talk about this question again.mp3",
+    audioQuestion: "What will we talk about again?",
+    answer: "We will talk about this question again."
+  },
+  {
+    english: "while we study the unit.",
+    audio: "while we study the unit.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "The question for Unit One is",
+    audio: "The question for Unit One is.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "What are you interested in?",
+    audio: "What are you interested in?.mp3",
+    audioQuestion: "What is the key question for Unit One?",
+    answer: "What are you interested in?"
+  },
+  {
+    english: "How about you, Yuna?",
+    audio: "How about you, Yuna?.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "What are you interested in?",
+    audio: "What are you interested in?.mp3",
+    audioQuestion: "What question does the teacher ask Yuna?",
+    answer: "The teacher asks Yuna, \"What are you interested in?\""
+  },
+  {
+    english: "I like cooking.",
+    audio: "I like cooking.mp3",
+    audioQuestion: "What does Yuna like?",
+    answer: "Yuna likes cooking."
+  },
+  {
+    english: "OK. Yuna likes cooking.",
+    audio: "OK. Yuna likes cooking.mp3",
+    audioQuestion: "What is Yuna's hobby?",
+    answer: "Yuna's hobby is cooking."
+  },
+  {
+    english: "How about you, Felix?",
+    audio: "How about you, Felix?.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "What are you interested in?",
+    audio: "What are you interested in?.mp3",
+    audioQuestion: "What does the teacher ask Felix?",
+    answer: "The teacher asks Felix, \"What are you interested in?\""
+  },
+  {
+    english: "I'm interested in languages.",
+    audio: "I'm interested in languages.mp3",
+    audioQuestion: "What is Felix interested in?",
+    answer: "Felix is interested in languages."
+  },
+  {
+    english: "I'm learning French.",
+    audio: "I'm learning French.mp3",
+    audioQuestion: "What language is Felix learning?",
+    answer: "Felix is learning French."
+  },
+  {
+    english: "I want to learn more languages.",
+    audio: "I want to learn more languages.mp3",
+    audioQuestion: "What is Felix's goal?",
+    answer: "Felix wants to learn more languages."
+  },
+  {
+    english: "Oh, very good.",
+    audio: "Oh, very good.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "Marcus, what are you interested in?",
+    audio: "Marcus, what are you interested in?.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "Lots of things.",
+    audio: "Lots of things.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "I really like sports.",
+    audio: "I really like sports.mp3",
+    audioQuestion: "What does Marcus really like?",
+    answer: "Marcus really likes sports."
+  },
+  {
+    english: "What's your favorite sport?",
+    audio: "What's your favorite sport?.mp3",
+    audioQuestion: "What does the teacher ask Marcus about his preference?",
+    answer: "The teacher asks, \"What's your favorite sport?\""
+  },
+  {
+    english: "Soccer.",
+    audio: "Soccer.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "I play soccer every weekend.",
+    audio: "I play soccer every weekend.mp3",
+    audioQuestion: "How often does Marcus play soccer?",
+    answer: "Marcus plays soccer every weekend."
+  },
+  {
+    english: "So Felix is learning French and Marcus plays soccer.",
+    audio: "So Felix is learning French and Marcus plays soccer.mp3",
+    audioQuestion: "What do Felix and Marcus each do in their free time?",
+    answer: "Felix is learning French and Marcus plays soccer."
+  },
+  {
+    english: "So Felix is learning French",
+    audio: "So Felix is learning French.mp3",
+    audioQuestion: "What is Felix learning?",
+    answer: "Felix is learning French."
+  },
+  {
+    english: "and Marcus plays soccer.",
+    audio: "and Marcus plays soccer.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "How about you, Sophy?",
+    audio: "How about you, Sophy?.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "What are you interested in?",
+    audio: "What are you interested in?.mp3",
+    audioQuestion: "What does the teacher ask Sophy?",
+    answer: "The teacher asks Sophy, \"What are you interested in?\""
+  },
+  {
+    english: "I like history.",
+    audio: "I like history.mp3",
+    audioQuestion: "What does Sophy like?",
+    answer: "Sophy likes history."
+  },
+  {
+    english: "I like to go to museums, and I also like to read.",
+    audio: "I like to go to museums, and I also like to read.mp3",
+    audioQuestion: "What are Sophy's hobbies?",
+    answer: "Sophy likes to go to museums and she also likes to read."
+  },
+  {
+    english: "I like to go to museums.",
+    audio: "I like to go to museums.mp3",
+    audioQuestion: "Where does Sophy like to go?",
+    answer: "Sophy likes to go to museums."
+  },
+  {
+    english: "and I also like to read.",
+    audio: "and I also like to read.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "So you all have different hobbies and interests.",
+    audio: "So you all have different hobbies and interests.mp3",
+    audioQuestion: "What do all the students have?",
+    answer: "All the students have different hobbies and interests."
+  },
+  {
+    english: "We'll talk about them more as we complete Unit One.",
+    audio: "We'll talk about them more as we complete Unit One.mp3",
+    audioQuestion: "When will we talk more about the students' hobbies and interests?",
+    answer: "We'll talk about them more as we complete Unit One."
+  },
+  {
+    english: "We'll talk about them more,",
+    audio: "We'll talk about them more,.mp3",
+    audioQuestion: "",
+    answer: ""
+  },
+  {
+    english: "as we complete Unit One.",
+    audio: "as we complete Unit One.mp3",
+    audioQuestion: "",
+    answer: ""
+  }
+];
+</script>
+</body>
+</html>
